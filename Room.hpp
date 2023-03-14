@@ -1,10 +1,15 @@
-#pragma once
 
-#include <algorithm>
+#ifndef ROOM_HPP
+#define ROOM_HPP
 
-class TemperatureControlSystem {
+#include <chrono>
+#include <thread>
+
+class Room {
     public:
-        TemperatureControlSystem(float minTemp, float maxTemp);
+        Room(float minTemp, float maxTemp);
+
+        ~Room();
 
         void setMinTemp(float minTemp);
         void setMaxTemp(float maxTemp);
@@ -19,7 +24,7 @@ class TemperatureControlSystem {
         void startCooling();
         void stopCooling();
 
-        void updateTemperature(float deltaTime);
+        void updateTemperature();
 
     private:
         float minTemp_;
@@ -27,4 +32,7 @@ class TemperatureControlSystem {
         float currentTemp_;
         bool heating_;
         bool cooling_;
+        std::thread thread_;
 };
+
+#endif /* ROOM_HPP */
