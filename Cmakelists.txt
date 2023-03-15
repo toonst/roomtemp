@@ -9,7 +9,10 @@ project(
 
 # If you set any CMAKE_ variables, that can go here.
 # (But usually don't do this, except maybe for C++ standard)
-set (CXX_STANDARD 20)
+
+set (CXX_STANDARD 20) # This doesn't seem to work on macos
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20") # workaround on macos
+set (CMAKE_VERBOSE_MAKEFILE on)
 
 # Find packages go here.
 
