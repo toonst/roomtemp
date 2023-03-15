@@ -15,6 +15,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20") # workaround on macos
 set (CMAKE_VERBOSE_MAKEFILE on)
 
 # Find packages go here.
+add_subdirectory(test)
 
 # This is a "default" library, and will match the *** variable setting.
 # Other common choices are STATIC, SHARED, and MODULE
